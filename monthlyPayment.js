@@ -14,7 +14,6 @@ var calc = function() {
 	
     return false;
 	
-
 };
 
  window.onload = function () 
@@ -23,5 +22,5 @@ var calc = function() {
     $("num_months").value = "";
 	$("interest_annual").value = "";
 	$("payment_monthly").value = "";
-
+    //$("calc").onclick = calc;
 }
