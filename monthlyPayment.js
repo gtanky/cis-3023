@@ -7,7 +7,6 @@ var calc = function() {
 	var months = parseFloat($("num_months").value);
 	var interest = parseFloat($("annual_interest").value);
 	var payment = $("annual_payment").value;
-	//var total = $("total").value;
 
 	payment = initial * ((interest/(12*100))/(1 - ((1 + (interest/(12*100))) ** (-1 * months))))
 	
