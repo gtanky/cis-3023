@@ -9,11 +9,6 @@ var calculate = function() {
     var salesTax;
     var total;
     
-    /*if (isNaN(subtotal) || isNaN(taxRate) || isNaN(shippingCharges)) {
-        alert("Please enter numbers");
-        return false;
-    }*/
-    
     salesTax = subtotal * (taxRate / 100);
     
     total = subtotal + salesTax + shippingCharges;
