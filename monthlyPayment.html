@@ -1,57 +1,41 @@
 <!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Join Email List</title>
+		<link rel="stylesheet" href="monthlyPayment.css">
+		<script src="monthlyPayment.js"></script>
+	</head>
+	<body>
+		<main>
+			<h1>Monhly payment calculator</h1>
+			<p>Enter the values below and click "calculate"</p>
+			<form id="loan_form" name="loan_form"  onsubmit="return false" onclick="calc()"   method="get">
+				<div class = "fields">
+					<label for="full_name">Full Name:</label>
+					<input type="text" id="full_name" name="full_name"placeholder="enter name here" required>
+					<br>
 
-<html lang = "en">
+					<label for="loan_initial">Initial Loan Amount</label>
+					<input type="number" id="loan_initial" name="loan_initial" min = "0" oninput="if(this.value < 0) this.value = null;" placeholder="initial loan amount greater than 0" required>
 
-    <head>
-        
-        <meta charset = "UTF-8">
-        <title>Monthly Payment Calculator</title>
-        <link rel = "Stylesheet" href = "monthlyPayment.css">
-        <script src = "monthlyPayment.js"></script>
-        
-    </head>
-    
-    <body>
-        
-        <main>
-            
-            <h1>Monthly Payment Calculator</h1>
-            
-            <form id = "monthly_payment__form" name = "monthly_payment_form" onsubmit = "return false" onsubmit = "click()" method = "get">
-                
-                <div class = "fields">
-                    
-                    <label for = "full_name">Full Name:</label>
-                    <input type = "text" id = "full_name" name = "full_name" placeholder = "Enter Full Name Here" required>
-                    <br>
-                
-                    <label for = "initial_loan_amount">Initial Loan Amount:</label>
-                    <input type = "number" id = "initial_loan_amount" name = "initial_loan_amount" min = "0" step = "0.01" title = "Initial value of loan" required>
-                    <br>
-                    
-                    <label for = "months_of_loan">Number of Months of Loan:</label>
-                    <input type = "number" id = "months_of_loan" name = "months_of_loan" min = "0" step = "1" required>
-                    <br>
-                    
-                    <label for = "annual_interest">Annual Interest:</label> 
-                    <input type = "number" id = "annual_interest" name = "annual_interest" min = "0" max = "100" step = "0.01" required>
-                    <span id = "percent_sign" class = "black">%</span>
-                    <br>
-                    
-                    <label for = "monthly_payment">Monthly Payment:</label>
-                    <input type = "text" id = "monthly_payment" name = "monthly_payment" disabled>
-                    <br>
-                    
-                    <label>&nbsp;</label>
-                    <input type = "submit" id = "calculate" name = "calculate" class = "input_button" value = "Calculate">
-                    <br>
-                
-                </div>
-                
-            </form>
-            
-        </main>
+					<br>
+					<label for="num_months">number of months:</label>
+					<input type="number" id="num_months" name="num_months" min = "0" oninput="if(this.value < 0) this.value = null;" placeholder = "value greater than 0" required>
+					<br>
 
-    </body>
-    
-</html> 
+					<label for="interest_annual">Annual Interest:</label>
+					<input type="number" id="interest_annual" name="interest_annual" min = "0" max = "100" oninput="if(this.value > 100 || this.value < 0) this.value = null;" required>
+					<br>
+
+					<label for="payment_monthly">Monthly Payment:</label>
+					<input type="text" id="payment_monthly" name="payment_monthly" disabled = "True" >
+					<br>
+					
+					<label>&nbsp;</label>
+					<input type="submit" id="calculate" value="calculate" class="input_button">
+				</div>
+			</form>
+		</main>
+	</body>
+</html>
