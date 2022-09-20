@@ -1,3 +1,3 @@
 # cis-3023
 
-[monthlyPayment](monthlyPayment/monthlyPayment.html)
+[monthlyPayment](monthlyPayment.html)
