@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <p>Click the Clear screen button clean the table</p>
+
+    <button onclick="document.getElementById('field1').innerHTML = ''">Clear screen</button>
+    <br><br>
+    <p>Click the Alphabet Unicode button to generate a table decimal / hex conversion table.</p>
+    <button onclick="printUni()">Run Alphabet Unicode table</button>
+    <br><br>
+    <p>Please enter Positive values for both Lower and Upper bounds. The Upper bound must be greater than the Lower
+        bound, and the maximum allowed number is 65,536.</p>
+    <button onclick="printRange()">Run
+        range unicode table</button>
+    <input type="number" id="lowerBoundry" name="lowerBoundry" min="0" step="1"
+        oninput="if(this.value < 0 || this.value > 65536) this.value = null;" placeholder="lower Boundry" required>
+    <input type="number" id="upperBoundry" name="upperBoundry" min="0" step="1"
+        oninput="if(this.value < 0 || this.value > 65536) this.value = null;" placeholder="upper Boundry" required>
+
+
+    <pre id="field1"></pre>
+
+    <script>
+        function printUni() {
+            var text = "Character\t\tDecimal Unicode\t\t\tHexadecimal Unicode";
+            var upperAlph = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            var lowerAlph = "abcdefghijklmnopqrstuvwxyz";
+            for (var i = 0; i < upperAlph.length; i++) {
+                text += "\n" + upperAlph.charAt(i)
+                    + "\t\t\t" + upperAlph.charCodeAt(i)
+                    + "\t\t\t\t\\u00" + upperAlph.charCodeAt(i).toString(16)
+            }
+            text += "\n\n";
+            for (var i = 0; i < upperAlph.length; i++) {
+                text += "\n" + lowerAlph.charAt(i)
+                    + "\t\t\t" + lowerAlph.charCodeAt(i)
+                    + "\t\t\t\t\\u00" + lowerAlph.charCodeAt(i).toString(16)
+            }
+            document.getElementById("field1").innerHTML = text;
+        }
+        function printRange() {
+            start = parseInt(document.getElementById('lowerBoundry').value);
+            end = parseInt(document.getElementById('upperBoundry').value);
+            if (end <= start) {
+                alert("the Upper bound must be greater than the Lower bound. Please try again");
+            }
+            else {
+                var output = "Character\t\tDecimal Unicode";
+                for (var i = start; i <= end; i++) {
+                    output += "\n" + String.fromCharCode(i)
+                        + "\t\t\t" + (i)
+                }
+                document.getElementById("field1").innerHTML = output;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
