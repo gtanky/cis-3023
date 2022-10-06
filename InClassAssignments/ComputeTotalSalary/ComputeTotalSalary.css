@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: White;
+    margin: 0 auto;
+    width: 400px;
+    border: 5px  groove grey;
+    box-shadow: 5px 10px 18px grey;
+    border-radius: 20px;
+    padding: 0 2em 1em;
+    background: rgb(220, 220, 220);
+}
+html {
+    background-color: Blue;
+}
+fieldset{
+    margin-bottom: 10px;
+    border-style: groove; 
+    border-width: 5px;
+}
+legend {
+    text-decoration: underline;
+}
+h1 {
+    color: gray;
+    margin-bottom: .5em;	
+}
+label {
+    float: left;
+    width: 9em;
+    text-align: right;
+}
+input {
+    margin-left: 1em;
+    margin-bottom: .5em;
+    width: 40%;
+}
+input[text]{
+    border-style: groove;
+    
+}
+
+span {
+    color: red;
+}
+#first_name_error {
+   color:orange;
+}
+.blue{
+    color:blue;
+}
+.green{
+    color:green;
+}
+.big {
+	font-size:300%;
+}
+.bottom_of_group {
+    margin-bottom: 2em;
+}
+.backImage {
+    height: 40px;
+    width: 40px;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+.input_button {
+    border-radius: 8px;
+    background: rgb(182, 191, 64);
+    background-image: linear-gradient(to bottom right, orange, yellow);
+    padding: 2px;
+    width: 80px;
+    height: 25px;
+}
+.input_button:hover {
+    background: rgb(227, 213, 28);
+}
