@@ -1,127 +1,54 @@
 var $ = function (id) {
 	return document.getElementById(id);
 };
-var menuOption;
-var num1;
-var num2;
-var meanCount = 0;
-var breakValue = "";
-for (; breakValue !="EXIT";) {
+for (; breakValue != "EXIT";) {
+	var breakValue = "";
 	var menu = function () {
 		for (; ;) {
-			menuOption = parseInt(prompt("Menu\n\n1. Add\n2. Subtract\n3. Multiply\n4. Divide\n5. Exponent\n6. Mean\n7. Quit"));
+			var menuOption = parseInt(prompt("Menu\n\n1. Add\n2. Subtract\n3. Multiply\n4. Divide\n5. Exponent\n6. Mean\n7. Quit"));
 			if (!isNaN(menuOption) && menuOption > 0 && menuOption < 8) {
-				break
+				return (menuOption);
 			}
 			alert("Please enter a number 1-7");
 		}//for
 	}//menu function
 
 	var addition = function () {
-		num1 = 0;
-		num2 = 0;
-		for (; ;) {
-			num1 = parseFloat(prompt("Enter the first number here"));
-			if (!isNaN(num1)) {
-				break
-			}
-			alert("Please enter a number");
-		}//for
-		for (; ;) {
-			num2 = parseFloat(prompt("Enter the second number here"));
-			if (!isNaN(num2)) {
-				break
-			}
-			alert("Please enter a number");
-		}//for
+		var num1 = numVerify("Enter the first number here");
+		var num2 = numVerify("Enter the second number here");
 		alert(num1 + num2);
 	}//addition function
 
 	var subtraction = function () {
-		num1 = 0;
-		num2 = 0;
-		for (; ;) {
-			num1 = parseFloat(prompt("Enter the first number here"));
-			if (!isNaN(num1)) {
-				break
-			}
-			alert("Please enter a number");
-		}//for
-		for (; ;) {
-			num2 = parseFloat(prompt("Enter the second number here that will be subtracted from the first"));
-			if (!isNaN(num2)) {
-				break
-			}
-			alert("Please enter a number");
-		}//for
+		var num1 = numVerify("Enter the first number here");
+		var num2 = numVerify("Enter the second number here that will be subtracted from the first");
 		alert(num1 - num2);
 	}//subtraction function
 
 	var multiplication = function () {
-		num1 = 0;
-		num2 = 0;
-		for (; ;) {
-			num1 = parseFloat(prompt("Enter the first number here"));
-			if (!isNaN(num1)) {
-				break
-			}
-			alert("Please enter a number");
-		}//for
-		for (; ;) {
-			num2 = parseFloat(prompt("Enter the second number here that will be multiplied with the first"));
-			if (!isNaN(num2)) {
-				break
-			}
-			alert("Please enter a number");
-		}//for
+		var num1 = numVerify("Enter the first number here");
+		var num2 = numVerify("Enter the second number here that will be multiplied with the first");
 		alert(num1 * num2);
 	}//multiplication function
 
 	var division = function () {
-		num1 = 0;
-		num2 = 0;
-		for (; ;) {
-			num1 = parseFloat(prompt("Enter the first number / numerator here"));
-			if (!isNaN(num1)) {
-				break
-			}
-			alert("Please enter a number");
-		}//for
-		for (; ;) {
-			num2 = parseFloat(prompt("Enter the second number/ denominator here that the first number will be divided by"));
-			if (!isNaN(num2)) {
-				break
-			}
-			alert("Please enter a number");
-		}//for
+		var num1 = numVerify("Enter the first number / numerator here");
+		var num2 = numVerify("Enter the second number / denominator here that the first number will be divided by");
 		alert(num1 / num2);
 	}//division function
 
 	var exponential = function () {
-		num1 = 0;
-		num2 = 0;
-		for (; ;) {
-			num1 = parseFloat(prompt("Enter the base number here"));
-			if (!isNaN(num1)) {
-				break
-			}
-			alert("Please enter a number");
-		}//for
-		for (; ;) {
-			num2 = parseFloat(prompt("Enter the exponent here"));
-			if (!isNaN(num2)) {
-				break
-			}
-			alert("Please enter a number");
-		}//for
+		var num1 = numVerify("Enter the base number here");
+		var num2 = numVerify("Enter the exponent here");
 		alert(num1 ** num2);
 	}//exponential function
 
 	var average = function () {
-		num1 = 0;
-		num2 = 0;
-		meanCount = 0;
+		var num1 = 0;
+		var num2 = 0;
+		var meanCount = 0;
 		for (; ;) {
+			//alert(num2)
 			num1 = prompt("Enter a number to add to the average here or enter '***' to end");
 			if (!isNaN(parseFloat(num1))) {
 				num2 += parseFloat(num1);
@@ -136,17 +63,23 @@ for (; breakValue !="EXIT";) {
 		}//for
 		alert(num2 / meanCount);
 	}//average function
-	
+
 	var exitProgram = function () {
 		alert("Thank you for using my Calculator, have a nice day!");
 		breakValue = "EXIT";
 	}//exit function
 
+	var numVerify = function (promptText) {
+		for (; ;) {
+			num1 = parseFloat(prompt(promptText));
+			if (!isNaN(num1)) {
+				return (num1);
+			}
+			alert("Please enter a number");
+		}//for
+	}//verification function
 
-
-	menu();
-	//alert(menuOption - 1);
-	switch (menuOption - 1) {
+	switch (menu() - 1) {
 		case 0://Add
 			addition();
 			break;
@@ -168,7 +101,5 @@ for (; breakValue !="EXIT";) {
 		case 6://Quit
 			exitProgram();
 			break;
-	}//for
-}//switch
-window.onload = function () {
-}
+	}//switch
+}//for
