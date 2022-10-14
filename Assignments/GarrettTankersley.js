@@ -1,37 +1,19 @@
-function vowelCount()
-
-{
-
-var string = prompt("Please enter a string", "");
-
-if(string === "***")
-
-{
-
-alert("Thanks for using the vowel counter.");
-
-}
-
-else{
-
-var vowels = 0;
-
-string = string.toLowerCase();
-
-for(i=0;i<string.length;i++)
-
-{
-
-if(string[i] == 'a' || string[i] == 'e' || string[i] == 'i' || string[i] == 'o' || string[i] == 'u')
-
-vowels++;
-
-}
-
-document.getElementById("output").innerHTML = "Vowel count in string "+string+" is "+vowels;
-
-vowelCount();
-
-}
-
-}
+var $ = function (id) {
+	return document.getElementById(id);
+};
+var vowelCounter = function () {
+	for (; ;) {
+		vowelCount = 0;
+		var usrInput = prompt("Please enter a string here to count the total vowels or enter '***' to end");
+		if (usrInput == "***") {
+			alert("Thank you for using Vowel Counter, have a nice day!");
+			break
+		}//if
+		for (var i = 0; i < usrInput.length; i++) {
+			if (usrInput.charAt(i).toLowerCase() == "a" || usrInput.charAt(i).toLowerCase() == "e" || usrInput.charAt(i).toLowerCase() == "i" || usrInput.charAt(i).toLowerCase() == "o" || usrInput.charAt(i).toLowerCase() == "u") {
+				vowelCount++;
+			}
+		}//for
+		document.getElementById("myHeader").innerHTML = vowelCount;
+	}//for
+}//vowel Function
