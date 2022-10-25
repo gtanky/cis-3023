@@ -11,9 +11,10 @@ var vowelCounter = function () {
 		}
 		for (var i = 0; i < usrInput.length; i++) {
 			if (usrInput.charAt(i).toLowerCase() == "a" || usrInput.charAt(i).toLowerCase() == "e" || usrInput.charAt(i).toLowerCase() == "i" || usrInput.charAt(i).toLowerCase() == "o" || usrInput.charAt(i).toLowerCase() == "u") {
-				vowelCount++;
+				vowelCount++; {
 				break
 			}
+		}
 		}
 		document.getElementById("myHeader").innerHTML = vowelCount;
 	}
