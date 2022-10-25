@@ -5,7 +5,7 @@ var vowelCounter = function () {
 	for (; ;) {
 		vowelCount = 0;
 		var usrInput = prompt("Please enter a string here to count the total vowels or enter '***' to end");
-		break;
+			break;
 		if (usrInput == "***") {
 			alert("Thank you for using Vowel Counter, have a nice day!");
 			break
