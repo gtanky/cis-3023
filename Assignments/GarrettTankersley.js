@@ -14,6 +14,8 @@ var vowelCounter = function () {
 				vowelCount++;
 			}
 		}
+		alert(vowelCount);
+			break
 		document.getElementById("myHeader").innerHTML = vowelCount;
 	}
 }
