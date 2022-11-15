@@ -12,13 +12,13 @@ var main = function () {
 	var probabilityAverage = numSuccesses / numTrials;
 	alert("Probability of getting a head on a coin toss is: \n" + probabilityAverage.toFixed(4) + "\n after " + numTrials + " trial(s).")
 	//*/
-	numTrials = parseInt(prompt("How many times would you like to run this? please enter a positive whole number."));
+	numTrials = parseInt(prompt("How many times would you like to run this? Please enter a positive whole number."));
 	for (var i = 0; i < numTrials; i++) {
 		if (arrayMatcher(randomArrayGenerator())) {
 			alert("Birthday twins found!!");
 		}
 		if (!(arrayMatcher(randomArrayGenerator()))) {
-			alert("There are no birthday twins :(");
+			alert("There are no birthday twins.");
 		}
 	}
 }
