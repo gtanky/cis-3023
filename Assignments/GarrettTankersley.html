@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Final Exam</title>
+</head>
+
+<body>
+	<main>
+		<h1>Monte Carlo Card Simulation</h1>
+		<p>Thank you for using My Card Simulation, please reload the page or press the button if you would like to go
+			again!
+		</p>
+		<button onclick="main()">run main function</button>
+
+		</div>
+		</form>
+	</main>
+	<script>
+		var main = function () {
+      var numSuccesses = 0;
+			var numTrials = parseInt(prompt("Enter the number of trials to run here"));
+			for (var i = 0; i < numTrials; i++) {//run the test the number of times the user requests
+				//if (atLeast6SumOn2Dice()) {
+				if (handContainsTwoAces(randomHandGenerator())) {
+					numSuccesses++;
+				}//if
+			}//for
+			var probabilityAverage = numSuccesses / numTrials;
+			alert("Probability of getting at Least 2 Aces in a  hand of 4 is: \n" + probabilityAverage.toFixed(4) + "\n after " + numTrials + " trial(s), with a total of " + numSuccesses + " hands with at least 2 Aces")
+		}//main function
+
+		var handContainsTwoAces = function (hand) {
+			var totalAces = 0;
+
+			if (hand.includes(1)) {
+				totalAces++;
+			}
+			if (hand.includes(14)) {
+				totalAces++;
+			}
+			if (hand.includes(27)) {
+				totalAces++;
+			}
+			if (hand.includes(40)) {
+				totalAces++;
+			}
+
+			/*
+			if(totalAces >= 2){
+				alert("Winning hand: " + hand + "\nhad: " + totalAces + " total ace(s)!");
+			}//*/
+			return (totalAces >= 2);
+		}//handContainsTwoAces function
+
+		var randomHandGenerator = function () {
+			var hand = new Array(4);
+			var deck = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52];
+			
+			for (var i = 0; i < hand.length; i++) {
+				hand[i] = deck[Math.floor(Math.random() * deck.length)];
+				deck.splice(hand[i] - 1, 1)
+			}//for			
+			//alert("your hand is: " + hand);
+			return (hand);
+		}//randomHandGenerator function
+
+		main();
+	</script>
+
+</body>
+
+</html>
